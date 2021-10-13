@@ -1,5 +1,6 @@
 package sort;
 
+import utils.AlgUtils;
 import utils.Performance;
 import utils.Printer;
 
@@ -28,8 +29,12 @@ public class Test {
         for (int[] intArr : Data.INT_ARRS) {
             Performance.startMem();
             bubble.quickSort(intArr,0,intArr.length-1);
-            Printer.print(intArr);
             Performance.endMem();
+            Printer.print(intArr);
         }
+
+        int[] nums = {1, 2};
+        AlgUtils.changeValue(nums,0,1);
+        Printer.print(nums);
     }
 }

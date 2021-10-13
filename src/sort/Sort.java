@@ -65,6 +65,12 @@ public class Sort {
         return arrs;
     }
 
+    /**
+     * 快速排序
+     * @param arrs
+     * @param leftIndex
+     * @param rightIndex
+     */
     public void quickSort(int[] arrs, int leftIndex, int rightIndex) {
         if (leftIndex >= rightIndex) {
             return;
@@ -85,6 +91,7 @@ public class Sort {
         arrs[left] = key;
         quickSort(arrs, leftIndex, left - 1);
         quickSort(arrs, right + 1, rightIndex);
+
     }
 
 }

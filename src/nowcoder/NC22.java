@@ -33,8 +33,8 @@ public class NC22 {
         int[] nums1 = {1, 2, 3, 0, 0, 0};
         int[] nums2 = {2, 5, 6};
         merge(nums1, 3, nums2, 3);
-        int[] nums3 = {1, 5, 8, 0, 0, 0};
-        int[] nums4 = {2, 4, 7};
+        int[] nums3 = {4, 5, 6, 0, 0, 0};
+        int[] nums4 = {1, 2, 3};
         merge2(nums3, 3, nums4, 3);
         Printer.print(nums1);
         Printer.print(nums3);
@@ -65,17 +65,13 @@ public class NC22 {
         }
     }
 
-    private static void merge2(int[] nums1, int m, int[] nums2, int n){
+    private static void merge2(int[] nums1, int m, int[] nums2, int n) {
         int p1 = m - 1, p2 = n - 1, len = m + n - 1;
         while (p1 >= 0 && p2 >= 0) {
-            if (nums1[p1] > nums2[p2]){
-                nums1[len] = nums1[p1];
-                p1--;
-            }else{
-                nums1[len] = nums2[p2];
-                p2--;
-            }
-            len--;
+            nums1[len--] = nums1[p1] > nums2[p2] ? nums1[p1--] : nums2[p2--];
+        }
+        while(p2 >= 0){
+            nums1[len--] = nums2[p2--];
         }
     }
 }
